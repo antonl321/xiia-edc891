@@ -233,18 +233,18 @@
     @media (max-width: 900px) {
       html,
       body {
-        height: 100%;
-        overflow: hidden;
+        min-height: 100%;
+        overflow: auto;
       }
 
       .wrap {
-        height: 100vh;
-        height: 100dvh;
+        min-height: 100vh;
+        min-height: 100dvh;
         max-width: none;
         padding: 10px;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow: visible;
       }
 
       header {
@@ -253,9 +253,7 @@
 
       .layout {
         grid-template-columns: 1fr;
-        grid-template-rows: auto minmax(0, 1fr);
-        flex: 1;
-        min-height: 0;
+        grid-template-rows: auto auto;
         gap: 10px;
       }
 
@@ -271,7 +269,6 @@
       .side {
         display: flex;
         flex-direction: column;
-        min-height: 0;
         gap: 8px;
       }
 
@@ -288,13 +285,12 @@
       }
 
       .list {
-        flex: 1;
-        min-height: 0;
         max-height: none;
+        overflow: visible;
       }
 
       .note {
-        display: none;
+        margin: 0;
       }
     }
 
