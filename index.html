@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>1986</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+    }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -221,12 +229,81 @@
     }
 
     @media (max-width: 900px) {
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .wrap {
+        height: 100vh;
+        height: 100dvh;
+        max-width: none;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      header {
+        display: none;
+      }
+
       .layout {
         grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(0, 1fr);
+        flex: 1;
+        min-height: 0;
+        gap: 10px;
+      }
+
+      .photo-shell {
+        padding: 8px;
+        border-radius: 12px;
+      }
+
+      .photo-wrap {
+        border-radius: 8px;
+      }
+
+      .side {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        gap: 8px;
+      }
+
+      .search input {
+        min-height: 42px;
+      }
+
+      .selected {
+        padding: 8px 10px;
+      }
+
+      .selected-title {
+        display: none;
       }
 
       .list {
+        flex: 1;
+        min-height: 0;
         max-height: none;
+      }
+
+      .note {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .dot {
+        width: 34px;
+        height: 34px;
+      }
+
+      .selected-meta {
+        display: none;
       }
     }
   </style>
